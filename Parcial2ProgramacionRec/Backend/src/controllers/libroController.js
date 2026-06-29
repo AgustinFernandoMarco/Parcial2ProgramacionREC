@@ -1,4 +1,4 @@
-const { sql } = require('./db');
+const { sql } = require('./db'); 
 
 const obtenerLibros = async (req, res) => {
     try {
@@ -9,17 +9,12 @@ const obtenerLibros = async (req, res) => {
     }
 };
 
+// POST /api/libros
 const registrarLibro = async (req, res) => {
     try {
         const { Titulo, Autor, Disponible } = req.body;
-        
-        if (!Titulo || !Autor) {
-            return res.status(400).json({ error: "Título y Autor son obligatorios" });
-        }
-
         await sql.query`INSERT INTO Libros (Titulo, Autor, Disponible) 
                         VALUES (${Titulo}, ${Autor}, ${Disponible})`;
-                        
         res.status(201).json({ mensaje: "Libro registrado con éxito" });
     } catch (error) {
         res.status(500).json({ error: error.message });
