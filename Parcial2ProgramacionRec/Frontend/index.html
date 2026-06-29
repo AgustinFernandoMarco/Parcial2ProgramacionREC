@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperatorio Programación II - Gestión de Biblioteca</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <header style="background-color: #2c3e50; color: white; padding: 20px; text-align: center; margin-bottom: 30px; border-radius: 4px;">
+        <h1>Biblioteca Escolar</h1>
+        <p>Sistema de Gestión de Libros Disponibles para Préstamo</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Registrar un Libro</h2>
+            <form id="form-libro">
+                <label for="titulo">Título del Libro:</label>
+                <input type="text" id="titulo" placeholder="Ej: El Aleph" required>
+
+                <label for="autor">Autor:</label>
+                <input type="text" id="autor" placeholder="Ej: Jorge Luis Borges" required>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="disponible" checked>
+                    <label for="disponible" style="margin: 0; cursor: pointer;">Disponible para préstamo (Sí / No)</label>
+                </div>
+
+                <button type="submit">Guardar libro</button>
+            </form>
+        </section>
+
+        <hr style="margin: 40px 0; border: 0; border-top: 1px solid #ccc;">
+
+        <section>
+            <h2>Sección de Listado (Libros Registrados)</h2>
+            <div id="lista-libros"></div>
+        </section>
+    </main>
+
+    <footer style="text-align: center; margin-top: 50px; padding: 20px; color: #7f8c8d; font-size: 14px; border-top: 1px solid #e0e0e0;">
+        <p>&copy; 2026 - Examen Recuperatorio Individual</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
